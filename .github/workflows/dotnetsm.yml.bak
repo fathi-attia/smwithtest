@@ -20,12 +20,12 @@ jobs:
         
     - name: Restore dependencies
       run: dotnet restore
-      working-directory: ./SimpleCalculator
+      working-directory: ./calc2
       
     - name: Build
       run: dotnet build --no-restore
-      working-directory: ./SimpleCalculator
+      working-directory: ./calc2
       
-    - name: Run Tests
+    - name: Test
       run: dotnet test --no-build --verbosity normal
-      working-directory: ./SimpleCalculator.Tests
+      working-directory: ./calc2 
