@@ -66,3 +66,4 @@ C:\Users\fathi\source\repos\smwithtest\SimpleCalculator\obj\Debug\net6.0\refint\
 C:\Users\fathi\source\repos\smwithtest\SimpleCalculator\obj\Debug\net6.0\SimpleCalculator.pdb
 C:\Users\fathi\source\repos\smwithtest\SimpleCalculator\obj\Debug\net6.0\SimpleCalculator.genruntimeconfig.cache
 C:\Users\fathi\source\repos\smwithtest\SimpleCalculator\obj\Debug\net6.0\ref\SimpleCalculator.dll
+C:\Users\fathi\source\repos\smwithtest\SimpleCalculator\obj\Debug\net6.0\SimpleCalculator.sourcelink.json
