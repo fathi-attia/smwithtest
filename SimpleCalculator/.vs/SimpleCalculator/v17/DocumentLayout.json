@@ -3,6 +3,10 @@
   "WorkspaceRootPath": "C:\\Users\\fathi\\source\\repos\\smwithtest\\SimpleCalculator\\",
   "Documents": [
     {
+      "AbsoluteMoniker": "D:0:0:{926DD63D-D3CD-4D96-AC5A-1906C4B43A3A}|SimpleCalculator.csproj|c:\\users\\fathi\\source\\repos\\smwithtest\\simplecalculator\\wwwroot\\js\\package.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "RelativeMoniker": "D:0:0:{926DD63D-D3CD-4D96-AC5A-1906C4B43A3A}|SimpleCalculator.csproj|solutionrelative:wwwroot\\js\\package.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{926DD63D-D3CD-4D96-AC5A-1906C4B43A3A}|SimpleCalculator.csproj|c:\\users\\fathi\\source\\repos\\smwithtest\\simplecalculator\\wwwroot\\html\\index.html||{40D31677-CBC0-4297-A9EF-89D907823A98}",
       "RelativeMoniker": "D:0:0:{926DD63D-D3CD-4D96-AC5A-1906C4B43A3A}|SimpleCalculator.csproj|solutionrelative:wwwroot\\html\\index.html||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
@@ -29,7 +33,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 18,
+          "SelectedChildIndex": 17,
           "Children": [
             {
               "$type": "Bookmark",
@@ -101,7 +105,20 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 0,
+              "Title": "package.json",
+              "DocumentMoniker": "C:\\Users\\fathi\\source\\repos\\smwithtest\\SimpleCalculator\\wwwroot\\js\\package.json",
+              "RelativeDocumentMoniker": "wwwroot\\js\\package.json",
+              "ToolTip": "C:\\Users\\fathi\\source\\repos\\smwithtest\\SimpleCalculator\\wwwroot\\js\\package.json",
+              "RelativeToolTip": "wwwroot\\js\\package.json",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAowBAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
+              "WhenOpened": "2025-02-13T23:38:21.292Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
               "Title": "calculator.test.js",
               "DocumentMoniker": "C:\\Users\\fathi\\source\\repos\\smwithtest\\SimpleCalculator\\wwwroot\\js\\calculator.test.js",
               "RelativeDocumentMoniker": "wwwroot\\js\\calculator.test.js",
@@ -113,7 +130,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 1,
               "Title": "index.html",
               "DocumentMoniker": "C:\\Users\\fathi\\source\\repos\\smwithtest\\SimpleCalculator\\wwwroot\\html\\index.html",
               "RelativeDocumentMoniker": "wwwroot\\html\\index.html",
@@ -126,7 +143,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 5,
               "Title": "CalculatorServiceTests.cs",
               "DocumentMoniker": "C:\\Users\\fathi\\source\\repos\\CalculatorTests\\CalculatorServiceTests.cs",
               "RelativeDocumentMoniker": "..\\..\\CalculatorTests\\CalculatorServiceTests.cs",
@@ -138,7 +155,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 2,
               "Title": "Program.cs",
               "DocumentMoniker": "C:\\Users\\fathi\\source\\repos\\smwithtest\\SimpleCalculator\\Program.cs",
               "RelativeDocumentMoniker": "Program.cs",
@@ -146,12 +163,11 @@
               "RelativeToolTip": "Program.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAqwAgAAAAGAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-02-13T02:49:47.211Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-02-13T02:49:47.211Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 4,
               "Title": "calculator.js",
               "DocumentMoniker": "C:\\Users\\fathi\\source\\repos\\smwithtest\\SimpleCalculator\\wwwroot\\js\\calculator.js",
               "RelativeDocumentMoniker": "wwwroot\\js\\calculator.js",
