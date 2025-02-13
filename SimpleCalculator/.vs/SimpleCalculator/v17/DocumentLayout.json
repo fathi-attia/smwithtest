@@ -3,6 +3,10 @@
   "WorkspaceRootPath": "C:\\Users\\fathi\\source\\repos\\smwithtest\\SimpleCalculator\\",
   "Documents": [
     {
+      "AbsoluteMoniker": "D:0:0:{926DD63D-D3CD-4D96-AC5A-1906C4B43A3A}|SimpleCalculator.csproj|c:\\users\\fathi\\source\\repos\\smwithtest\\simplecalculator\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{926DD63D-D3CD-4D96-AC5A-1906C4B43A3A}|SimpleCalculator.csproj|solutionrelative:program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{926DD63D-D3CD-4D96-AC5A-1906C4B43A3A}|SimpleCalculator.csproj|c:\\users\\fathi\\source\\repos\\smwithtest\\simplecalculator\\wwwroot\\js\\calculator.test.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}",
       "RelativeMoniker": "D:0:0:{926DD63D-D3CD-4D96-AC5A-1906C4B43A3A}|SimpleCalculator.csproj|solutionrelative:wwwroot\\js\\calculator.test.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}"
     },
@@ -15,10 +19,6 @@
       "RelativeMoniker": "D:0:0:{926DD63D-D3CD-4D96-AC5A-1906C4B43A3A}|SimpleCalculator.csproj|solutionrelative:wwwroot\\html\\index.html||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{926DD63D-D3CD-4D96-AC5A-1906C4B43A3A}|SimpleCalculator.csproj|c:\\users\\fathi\\source\\repos\\smwithtest\\simplecalculator\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{926DD63D-D3CD-4D96-AC5A-1906C4B43A3A}|SimpleCalculator.csproj|solutionrelative:program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\fathi\\source\\repos\\CalculatorTests\\CalculatorServiceTests.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
@@ -29,7 +29,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 17,
+          "SelectedChildIndex": 20,
           "Children": [
             {
               "$type": "Bookmark",
@@ -101,7 +101,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 1,
               "Title": "calculator.test.js",
               "DocumentMoniker": "C:\\Users\\fathi\\source\\repos\\smwithtest\\SimpleCalculator\\wwwroot\\js\\calculator.test.js",
               "RelativeDocumentMoniker": "wwwroot\\js\\calculator.test.js",
@@ -114,7 +114,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 3,
               "Title": "index.html",
               "DocumentMoniker": "C:\\Users\\fathi\\source\\repos\\smwithtest\\SimpleCalculator\\wwwroot\\html\\index.html",
               "RelativeDocumentMoniker": "wwwroot\\html\\index.html",
@@ -138,19 +138,20 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 0,
               "Title": "Program.cs",
               "DocumentMoniker": "C:\\Users\\fathi\\source\\repos\\smwithtest\\SimpleCalculator\\Program.cs",
               "RelativeDocumentMoniker": "Program.cs",
               "ToolTip": "C:\\Users\\fathi\\source\\repos\\smwithtest\\SimpleCalculator\\Program.cs",
               "RelativeToolTip": "Program.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAqwAgAAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAqwAgAAAAGAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-02-13T02:49:47.211Z"
+              "WhenOpened": "2025-02-13T02:49:47.211Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 2,
               "Title": "calculator.js",
               "DocumentMoniker": "C:\\Users\\fathi\\source\\repos\\smwithtest\\SimpleCalculator\\wwwroot\\js\\calculator.js",
               "RelativeDocumentMoniker": "wwwroot\\js\\calculator.js",
