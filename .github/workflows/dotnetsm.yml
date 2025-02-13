@@ -1,4 +1,4 @@
-name: .NET Build and Test
+name: .NET and Jest Build and Test
 
 on:
   push:
@@ -13,11 +13,13 @@ jobs:
     steps:
     - uses: actions/checkout@v3
     
+    # Setup .NET for NUnit tests
     - name: Setup .NET
       uses: actions/setup-dotnet@v3
       with:
         dotnet-version: 6.0.x
         
+    # Restore and Build .NET Project
     - name: Restore dependencies
       run: dotnet restore
       working-directory: ./SimpleCalculator
@@ -26,6 +28,23 @@ jobs:
       run: dotnet build --no-restore
       working-directory: ./SimpleCalculator
       
-    - name: Run Tests
+    # Run NUnit Tests
+    - name: Run NUnit Tests
       run: dotnet test --no-build --verbosity normal
       working-directory: ./SimpleCalculator.Tests
+
+    # Setup Node.js for Jest testing
+    - name: Setup Node.js
+      uses: actions/setup-node@v3
+      with:
+        node-version: '20' # Use latest LTS version
+        
+    # Install dependencies for Jest tests
+    - name: Install Node.js dependencies
+      run: npm install
+      working-directory: ./SimpleCalculator/wwwroot/js
+
+    # Run Jest Tests
+    - name: Run Jest Tests
+      run: npm test
+      working-directory: ./SimpleCalculator/wwwroot/js
