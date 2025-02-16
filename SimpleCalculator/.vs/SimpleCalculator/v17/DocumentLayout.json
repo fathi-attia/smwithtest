@@ -111,9 +111,9 @@
               "RelativeDocumentMoniker": "wwwroot\\html\\index.html",
               "ToolTip": "C:\\Users\\fathi\\source\\repos\\smwithtest\\SimpleCalculator\\wwwroot\\html\\index.html",
               "RelativeToolTip": "wwwroot\\html\\index.html",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAcAAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001512|",
-              "WhenOpened": "2025-02-16T20:48:33.221Z",
+              "WhenOpened": "2025-02-16T20:54:30.189Z",
               "EditorCaption": ""
             },
             {
@@ -126,7 +126,8 @@
               "RelativeToolTip": "wwwroot\\js\\package.json",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAABAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
-              "WhenOpened": "2025-02-13T23:38:21.292Z"
+              "WhenOpened": "2025-02-13T23:38:21.292Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
