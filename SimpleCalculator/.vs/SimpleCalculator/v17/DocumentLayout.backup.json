@@ -7,12 +7,12 @@
       "RelativeMoniker": "D:0:0:{926DD63D-D3CD-4D96-AC5A-1906C4B43A3A}|SimpleCalculator.csproj|solutionrelative:wwwroot\\html\\index.html||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{926DD63D-D3CD-4D96-AC5A-1906C4B43A3A}|SimpleCalculator.csproj|c:\\users\\fathi\\source\\repos\\smwithtest\\simplecalculator\\wwwroot\\js\\calculator.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}",
-      "RelativeMoniker": "D:0:0:{926DD63D-D3CD-4D96-AC5A-1906C4B43A3A}|SimpleCalculator.csproj|solutionrelative:wwwroot\\js\\calculator.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{926DD63D-D3CD-4D96-AC5A-1906C4B43A3A}|SimpleCalculator.csproj|c:\\users\\fathi\\source\\repos\\smwithtest\\simplecalculator\\wwwroot\\js\\package.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
       "RelativeMoniker": "D:0:0:{926DD63D-D3CD-4D96-AC5A-1906C4B43A3A}|SimpleCalculator.csproj|solutionrelative:wwwroot\\js\\package.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{926DD63D-D3CD-4D96-AC5A-1906C4B43A3A}|SimpleCalculator.csproj|c:\\users\\fathi\\source\\repos\\smwithtest\\simplecalculator\\wwwroot\\js\\calculator.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}",
+      "RelativeMoniker": "D:0:0:{926DD63D-D3CD-4D96-AC5A-1906C4B43A3A}|SimpleCalculator.csproj|solutionrelative:wwwroot\\js\\calculator.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{926DD63D-D3CD-4D96-AC5A-1906C4B43A3A}|SimpleCalculator.csproj|c:\\users\\fathi\\source\\repos\\smwithtest\\simplecalculator\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -111,14 +111,14 @@
               "RelativeDocumentMoniker": "wwwroot\\html\\index.html",
               "ToolTip": "C:\\Users\\fathi\\source\\repos\\smwithtest\\SimpleCalculator\\wwwroot\\html\\index.html",
               "RelativeToolTip": "wwwroot\\html\\index.html",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAMAAAAWAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAcAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001512|",
-              "WhenOpened": "2025-02-16T20:40:31.136Z",
+              "WhenOpened": "2025-02-16T20:48:33.221Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 1,
               "Title": "package.json",
               "DocumentMoniker": "C:\\Users\\fathi\\source\\repos\\smwithtest\\SimpleCalculator\\wwwroot\\js\\package.json",
               "RelativeDocumentMoniker": "wwwroot\\js\\package.json",
@@ -166,7 +166,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 2,
               "Title": "calculator.js",
               "DocumentMoniker": "C:\\Users\\fathi\\source\\repos\\smwithtest\\SimpleCalculator\\wwwroot\\js\\calculator.js",
               "RelativeDocumentMoniker": "wwwroot\\js\\calculator.js",

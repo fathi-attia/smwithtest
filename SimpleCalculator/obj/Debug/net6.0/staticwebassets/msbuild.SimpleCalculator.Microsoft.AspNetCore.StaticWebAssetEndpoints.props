@@ -24,29 +24,29 @@
       <EndpointProperties><![CDATA[[{"Name":"integrity","Value":"sha256-Jtxf9L\u002B5ITKRc1gIRl4VbUpGkRNfOBXjYTdhJD4facM="}]]]></EndpointProperties>
       <ResponseHeaders><![CDATA[[{"Name":"Accept-Ranges","Value":"bytes"},{"Name":"Cache-Control","Value":"max-age=3600, must-revalidate"},{"Name":"Content-Length","Value":"5430"},{"Name":"Content-Type","Value":"image/x-icon"},{"Name":"ETag","Value":"\u0022Jtxf9L\u002B5ITKRc1gIRl4VbUpGkRNfOBXjYTdhJD4facM=\u0022"},{"Name":"Last-Modified","Value":"Thu, 13 Feb 2025 02:48:34 GMT"}]]]></ResponseHeaders>
     </StaticWebAssetEndpoint>
-    <StaticWebAssetEndpoint Include="_content/SimpleCalculator/html/index.8hul7s4mkr.html">
+    <StaticWebAssetEndpoint Include="_content/SimpleCalculator/html/index.fqq1seqvkz.html">
       <AssetFile>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\html\index.html'))</AssetFile>
       <Selectors><![CDATA[[]]]></Selectors>
-      <EndpointProperties><![CDATA[[{"Name":"fingerprint","Value":"8hul7s4mkr"},{"Name":"integrity","Value":"sha256-jKSi95oT9mga\u002BXMMNSF1Xm9v2E2M4Mjys\u002BCGLYSIMW4="},{"Name":"label","Value":"_content/SimpleCalculator/html/index.html"}]]]></EndpointProperties>
-      <ResponseHeaders><![CDATA[[{"Name":"Accept-Ranges","Value":"bytes"},{"Name":"Cache-Control","Value":"max-age=31536000, immutable"},{"Name":"Content-Length","Value":"716"},{"Name":"Content-Type","Value":"text/html"},{"Name":"ETag","Value":"\u0022jKSi95oT9mga\u002BXMMNSF1Xm9v2E2M4Mjys\u002BCGLYSIMW4=\u0022"},{"Name":"Last-Modified","Value":"Thu, 13 Feb 2025 01:25:36 GMT"}]]]></ResponseHeaders>
+      <EndpointProperties><![CDATA[[{"Name":"fingerprint","Value":"fqq1seqvkz"},{"Name":"integrity","Value":"sha256-ac56m4HY9y2uecXLYTkWgXeN5C9lYaQLue4smN26pHs="},{"Name":"label","Value":"_content/SimpleCalculator/html/index.html"}]]]></EndpointProperties>
+      <ResponseHeaders><![CDATA[[{"Name":"Accept-Ranges","Value":"bytes"},{"Name":"Cache-Control","Value":"max-age=31536000, immutable"},{"Name":"Content-Length","Value":"858"},{"Name":"Content-Type","Value":"text/html"},{"Name":"ETag","Value":"\u0022ac56m4HY9y2uecXLYTkWgXeN5C9lYaQLue4smN26pHs=\u0022"},{"Name":"Last-Modified","Value":"Sun, 16 Feb 2025 20:49:52 GMT"}]]]></ResponseHeaders>
     </StaticWebAssetEndpoint>
     <StaticWebAssetEndpoint Include="_content/SimpleCalculator/html/index.html">
       <AssetFile>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\html\index.html'))</AssetFile>
       <Selectors><![CDATA[[]]]></Selectors>
-      <EndpointProperties><![CDATA[[{"Name":"integrity","Value":"sha256-jKSi95oT9mga\u002BXMMNSF1Xm9v2E2M4Mjys\u002BCGLYSIMW4="}]]]></EndpointProperties>
-      <ResponseHeaders><![CDATA[[{"Name":"Accept-Ranges","Value":"bytes"},{"Name":"Cache-Control","Value":"no-cache"},{"Name":"Content-Length","Value":"716"},{"Name":"Content-Type","Value":"text/html"},{"Name":"ETag","Value":"\u0022jKSi95oT9mga\u002BXMMNSF1Xm9v2E2M4Mjys\u002BCGLYSIMW4=\u0022"},{"Name":"Last-Modified","Value":"Thu, 13 Feb 2025 01:25:36 GMT"}]]]></ResponseHeaders>
+      <EndpointProperties><![CDATA[[{"Name":"integrity","Value":"sha256-ac56m4HY9y2uecXLYTkWgXeN5C9lYaQLue4smN26pHs="}]]]></EndpointProperties>
+      <ResponseHeaders><![CDATA[[{"Name":"Accept-Ranges","Value":"bytes"},{"Name":"Cache-Control","Value":"no-cache"},{"Name":"Content-Length","Value":"858"},{"Name":"Content-Type","Value":"text/html"},{"Name":"ETag","Value":"\u0022ac56m4HY9y2uecXLYTkWgXeN5C9lYaQLue4smN26pHs=\u0022"},{"Name":"Last-Modified","Value":"Sun, 16 Feb 2025 20:49:52 GMT"}]]]></ResponseHeaders>
     </StaticWebAssetEndpoint>
     <StaticWebAssetEndpoint Include="_content/SimpleCalculator/js/calculator.js">
       <AssetFile>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\js\calculator.js'))</AssetFile>
       <Selectors><![CDATA[[]]]></Selectors>
       <EndpointProperties><![CDATA[[{"Name":"integrity","Value":"sha256-R71akZNotvRXJRM4lxkPGUV7mNuJDXgiVKWUk4rTGh8="}]]]></EndpointProperties>
-      <ResponseHeaders><![CDATA[[{"Name":"Accept-Ranges","Value":"bytes"},{"Name":"Cache-Control","Value":"no-cache"},{"Name":"Content-Length","Value":"1078"},{"Name":"Content-Type","Value":"text/javascript"},{"Name":"ETag","Value":"\u0022R71akZNotvRXJRM4lxkPGUV7mNuJDXgiVKWUk4rTGh8=\u0022"},{"Name":"Last-Modified","Value":"Thu, 13 Feb 2025 02:49:36 GMT"}]]]></ResponseHeaders>
+      <ResponseHeaders><![CDATA[[{"Name":"Accept-Ranges","Value":"bytes"},{"Name":"Cache-Control","Value":"no-cache"},{"Name":"Content-Length","Value":"1078"},{"Name":"Content-Type","Value":"text/javascript"},{"Name":"ETag","Value":"\u0022R71akZNotvRXJRM4lxkPGUV7mNuJDXgiVKWUk4rTGh8=\u0022"},{"Name":"Last-Modified","Value":"Sun, 16 Feb 2025 20:30:26 GMT"}]]]></ResponseHeaders>
     </StaticWebAssetEndpoint>
     <StaticWebAssetEndpoint Include="_content/SimpleCalculator/js/calculator.n0z0c08wyt.js">
       <AssetFile>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\js\calculator.js'))</AssetFile>
       <Selectors><![CDATA[[]]]></Selectors>
       <EndpointProperties><![CDATA[[{"Name":"fingerprint","Value":"n0z0c08wyt"},{"Name":"integrity","Value":"sha256-R71akZNotvRXJRM4lxkPGUV7mNuJDXgiVKWUk4rTGh8="},{"Name":"label","Value":"_content/SimpleCalculator/js/calculator.js"}]]]></EndpointProperties>
-      <ResponseHeaders><![CDATA[[{"Name":"Accept-Ranges","Value":"bytes"},{"Name":"Cache-Control","Value":"max-age=31536000, immutable"},{"Name":"Content-Length","Value":"1078"},{"Name":"Content-Type","Value":"text/javascript"},{"Name":"ETag","Value":"\u0022R71akZNotvRXJRM4lxkPGUV7mNuJDXgiVKWUk4rTGh8=\u0022"},{"Name":"Last-Modified","Value":"Thu, 13 Feb 2025 02:49:36 GMT"}]]]></ResponseHeaders>
+      <ResponseHeaders><![CDATA[[{"Name":"Accept-Ranges","Value":"bytes"},{"Name":"Cache-Control","Value":"max-age=31536000, immutable"},{"Name":"Content-Length","Value":"1078"},{"Name":"Content-Type","Value":"text/javascript"},{"Name":"ETag","Value":"\u0022R71akZNotvRXJRM4lxkPGUV7mNuJDXgiVKWUk4rTGh8=\u0022"},{"Name":"Last-Modified","Value":"Sun, 16 Feb 2025 20:30:26 GMT"}]]]></ResponseHeaders>
     </StaticWebAssetEndpoint>
     <StaticWebAssetEndpoint Include="_content/SimpleCalculator/js/calculator.test.dcow1qkmpt.js">
       <AssetFile>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\js\calculator.test.js'))</AssetFile>
