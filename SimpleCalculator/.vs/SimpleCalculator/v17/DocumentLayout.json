@@ -33,7 +33,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 19,
+          "SelectedChildIndex": 17,
           "Children": [
             {
               "$type": "Bookmark",
@@ -105,6 +105,19 @@
             },
             {
               "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "index.html",
+              "DocumentMoniker": "C:\\Users\\fathi\\source\\repos\\smwithtest\\SimpleCalculator\\wwwroot\\html\\index.html",
+              "RelativeDocumentMoniker": "wwwroot\\html\\index.html",
+              "ToolTip": "C:\\Users\\fathi\\source\\repos\\smwithtest\\SimpleCalculator\\wwwroot\\html\\index.html",
+              "RelativeToolTip": "wwwroot\\html\\index.html",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAgAAAAGAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001512|",
+              "WhenOpened": "2025-02-16T20:40:31.136Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
               "DocumentIndex": 2,
               "Title": "package.json",
               "DocumentMoniker": "C:\\Users\\fathi\\source\\repos\\smwithtest\\SimpleCalculator\\wwwroot\\js\\package.json",
@@ -127,19 +140,6 @@
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAYAAAAlAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001646|",
               "WhenOpened": "2025-02-13T03:28:54.438Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "index.html",
-              "DocumentMoniker": "C:\\Users\\fathi\\source\\repos\\smwithtest\\SimpleCalculator\\wwwroot\\html\\index.html",
-              "RelativeDocumentMoniker": "wwwroot\\html\\index.html",
-              "ToolTip": "C:\\Users\\fathi\\source\\repos\\smwithtest\\SimpleCalculator\\wwwroot\\html\\index.html",
-              "RelativeToolTip": "wwwroot\\html\\index.html",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAUAAAAdAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001512|",
-              "WhenOpened": "2025-02-13T03:26:47.193Z",
-              "EditorCaption": ""
             },
             {
               "$type": "Document",
@@ -175,8 +175,7 @@
               "RelativeToolTip": "wwwroot\\js\\calculator.js",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAABEAAAAtAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001646|",
-              "WhenOpened": "2025-02-13T02:49:23.002Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-02-13T02:49:23.002Z"
             }
           ]
         }
