@@ -6,4 +6,4 @@ app.UseStaticFiles(); // Allows serving static files (HTML, JS)
 app.MapGet("/", () => Results.Redirect("/html/index.html")); // Redirect to index.html
 
 app.Run();
-//test
+//test 
