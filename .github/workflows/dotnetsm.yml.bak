@@ -22,16 +22,16 @@ jobs:
     # Restore and Build .NET Project
     - name: Restore dependencies
       run: dotnet restore
-      working-directory: ./SimpleCalculator
+      working-directory: ./src
       
     - name: Build
       run: dotnet build --no-restore
-      working-directory: ./SimpleCalculator
+      working-directory: ./src
       
     # Run NUnit Tests
     - name: Run NUnit Tests
       run: dotnet test --no-build --verbosity normal
-      working-directory: ./SimpleCalculator.Tests
+      working-directory: ./Tests
 
     # Setup Node.js for Jest testing
     - name: Setup Node.js
@@ -42,14 +42,14 @@ jobs:
     # Install dependencies for Jest tests
     - name: Install Node.js dependencies
       run: npm ci
-      working-directory: ./SimpleCalculator/wwwroot/js
+      working-directory: ./src/wwwroot/js
 
     # Ensure Jest has execution permissions
     - name: Grant Jest Execution Permissions
       run: chmod +x node_modules/.bin/jest
-      working-directory: ./SimpleCalculator/wwwroot/js
+      working-directory: ./src/wwwroot/js
 
     # Run Jest Tests
     - name: Run Jest Tests
       run: npx jest
-      working-directory: ./SimpleCalculator/wwwroot/js
+      working-directory: ./src/wwwroot/js

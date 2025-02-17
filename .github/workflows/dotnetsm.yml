@@ -31,7 +31,7 @@ jobs:
     # Run NUnit Tests
     - name: Run NUnit Tests
       run: dotnet test --no-build --verbosity normal
-      working-directory: ./Tests
+      working-directory: ./tests
 
     # Setup Node.js for Jest testing
     - name: Setup Node.js
