@@ -1,0 +1,54 @@
+## .NET Core
+bin/
+obj/
+*.user
+*.userosscache
+*.suo
+.vs/
+
+## Build results
+[Dd]ebug/
+[Rr]elease/
+x64/
+x86/
+[Ww][Ii][Nn]32/
+[Aa][Rr][Mm]/
+[Aa][Rr][Mm]64/
+bld/
+
+## Visual Studio files
+.vscode/
+*.vspscc
+*.vssscc
+.builds
+*.pidb
+*.svclog
+*.scc
+*.psess
+*.vsp
+*.vspx
+*.sap
+
+## Test Results
+[Tt]est[Rr]esult*/
+[Bb]uild[Ll]og.*
+TestResults/
+
+## Node.js (for your Jest tests)
+node_modules/
+npm-debug.log*
+coverage/
+.env
+.env.local
+
+## Project specific
+src/**/bin/
+src/**/obj/
+tests/**/bin/
+tests/**/obj/
+
+## Others
+*.cache
+project.lock.json
+*.dbmdl
+*.jfm 
