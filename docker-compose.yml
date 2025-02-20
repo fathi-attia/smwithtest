@@ -1,0 +1,6 @@
+services:
+  simplecalculator:
+    image: ${DOCKER_REGISTRY-}simplecalculator
+    build:
+      context: .
+      dockerfile: src/Dockerfile

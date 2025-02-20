@@ -1,38 +1,30 @@
-# Build stage
+# Use .NET SDK for building and testing
 FROM mcr.microsoft.com/dotnet/sdk:6.0 AS build
-# Add NodeJS for Jest tests
-RUN apt-get update && apt-get install -y nodejs npm
 
-WORKDIR /src
+# Install specific Node.js version
+RUN curl -fsSL https://deb.nodesource.com/setup_16.x | bash - && \
+    apt-get install -y nodejs
 
-# Copy csproj and package.json files first
-COPY ["src/SimpleCalculator.csproj", "src/"]
-COPY ["tests/CalculatorTests.csproj", "tests/"]
-COPY ["src/wwwroot/js/package.json", "src/wwwroot/js/"]
+# Set working directory
+WORKDIR /app
 
-# Restore packages for both .NET and Node
-RUN dotnet restore "src/SimpleCalculator.csproj"
-RUN dotnet restore "tests/CalculatorTests.csproj"
-WORKDIR /src/src/wwwroot/js
-RUN npm install
-
-# Copy the rest of the code
-WORKDIR /src
+# Copy everything
 COPY . .
 
-# Build and run both .NET and Jest tests
-RUN dotnet build "src/SimpleCalculator.csproj" -c Release
-RUN dotnet test "tests/CalculatorTests.csproj" -c Release
-WORKDIR /src/src/wwwroot/js
-RUN npm test
+# Build, test, and publish .NET
+RUN dotnet build src/SimpleCalculator.csproj
+RUN dotnet test tests/CalculatorTests.csproj
+RUN dotnet publish src/SimpleCalculator.csproj -c Debug -o /app/publish
 
-# Publish
-FROM build AS publish
-WORKDIR /src
-RUN dotnet publish "src/SimpleCalculator.csproj" -c Release -o /app/publish
+# Run Jest tests
+WORKDIR /app/src/wwwroot/js
+RUN npm install --legacy-peer-deps
+RUN npm test
 
 # Final stage
 FROM mcr.microsoft.com/dotnet/aspnet:6.0
 WORKDIR /app
-COPY --from=publish /app/publish .
+COPY --from=build /app/publish .
+COPY --from=build /app/src/wwwroot ./wwwroot
+EXPOSE 80
 ENTRYPOINT ["dotnet", "SimpleCalculator.dll"]
