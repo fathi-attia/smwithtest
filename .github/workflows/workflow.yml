@@ -1,33 +1,54 @@
+# Workflow name
 name: .NET and Jest Build and Test
 
+# Trigger on push and pull request to master branch
 on:
   push:
     branches: [ "master" ]
   pull_request:
     branches: [ "master" ]
 
+# Define the jobs
 jobs:
+  # First job: Build the application
   build:
     runs-on: ubuntu-latest
-
+    permissions:
+      contents: read
     steps:
     - uses: actions/checkout@v3
     
-    # Setup .NET for NUnit tests
+    # Setup .NET for building
     - name: Setup .NET
       uses: actions/setup-dotnet@v3
       with:
         dotnet-version: 6.0.x
         
-    # Restore and Build .NET Project
+    # Restore dependencies from NuGet
     - name: Restore dependencies
       run: dotnet restore
       working-directory: ./src
       
+    # Build the application
     - name: Build
       run: dotnet build --no-restore
       working-directory: ./src
-      
+
+  # Second job: Run all tests
+  test:
+    needs: build  # Only run after successful build
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+    steps:
+    - uses: actions/checkout@v3
+    
+    # Setup .NET for testing
+    - name: Setup .NET
+      uses: actions/setup-dotnet@v3
+      with:
+        dotnet-version: 6.0.x
+        
     # Run NUnit Tests
     - name: Run NUnit Tests
       run: dotnet test --no-build --verbosity normal
@@ -37,9 +58,9 @@ jobs:
     - name: Setup Node.js
       uses: actions/setup-node@v3
       with:
-        node-version: '20' # Use latest LTS version
+        node-version: '20'
         
-    # Install dependencies for Jest tests
+    # Install Node.js dependencies
     - name: Install Node.js dependencies
       run: npm ci
       working-directory: ./src/wwwroot/js
@@ -53,15 +74,25 @@ jobs:
     - name: Run Jest Tests
       run: npx jest
       working-directory: ./src/wwwroot/js
-      
-    # Login to Docker Hub
+
+  # Third job: Build and push Docker image
+  docker:
+    needs: test  # Only run after successful tests
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+      packages: write
+    steps:
+    - uses: actions/checkout@v3
+    
+    # Login to Docker Hub using secrets
     - name: Login to Docker Hub
       uses: docker/login-action@v2
       with:
         username: ${{ secrets.DOCKERHUB_USERNAME }}
         password: ${{ secrets.DOCKERHUB_TOKEN }}
         
-    # Build and Push Docker image
+    # Build and push the Docker image
     - name: Build and Push Docker image
       run: |
         docker build -t fathyattia/smwithtest:latest .
