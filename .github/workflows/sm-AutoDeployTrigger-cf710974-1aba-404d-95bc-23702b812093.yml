@@ -2,16 +2,11 @@ name: Trigger auto deployment for sm
 
 # When this action will be executed
 on:
-  # Automatically trigger it when detected changes in repo
-  push:
-    branches: 
-      [ master ]
-    paths:
-    - '**'
-    - '.github/workflows/sm-AutoDeployTrigger-cf710974-1aba-404d-95bc-23702b812093.yml'
-
-  # Allow manual trigger 
-  workflow_dispatch:      
+  workflow_run:
+    workflows: [".NET and Jest Build and Test"]
+    types:
+      - completed
+  workflow_dispatch:
 
 jobs:
   build-and-deploy:
