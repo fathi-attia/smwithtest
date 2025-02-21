@@ -3,7 +3,7 @@ name: Trigger auto deployment for sm
 # When this action will be executed
 on:
   workflow_run:
-    workflows: [" .NET and Jest Build and Test"]
+    workflows: [".NET and Jest Build and Test"]
     types:
       - completed
   workflow_dispatch:
