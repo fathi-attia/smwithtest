@@ -3,27 +3,20 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
     <title>Simple Calculator</title>
-
     <script src="../js/calculator.js" defer></script>
 </head>
 <body>
-    <h2>many thanks to my brother mohamed hassan shakersc-29</h2>
-
-
+    <h2>many thanks to my brother mohamed hassan shakersc-30</h2>
     <h2>Simple Calculator</h2>
 
-   
+    <input type="number" id="num1" placeholder="Enter first number" data-qa="input-num1">
+    <input type="number" id="num2" placeholder="Enter second number" data-qa="input-num2">
 
-    <input type="number" id="num1" placeholder="Enter first number">
-    <input type="number" id="num2" placeholder="Enter second number">
+    <button data-qa="btn-add" onclick="performCalculation('add')">Add</button>
+    <button data-qa="btn-subtract" onclick="performCalculation('subtract')">Subtract</button>
+    <button data-qa="btn-multiply" onclick="performCalculation('multiply')">Multiply</button>
 
-    <button onclick="performCalculation('add')">Add</button>
-    <button onclick="performCalculation('subtract')">Subtract</button>
-    <button onclick="performCalculation('multiply')">Multiply</button>
-
-    <h3>Result: <span id="result">0</span></h3>
-
+    <h3>Result: <span id="result" data-qa="result-value">0</span></h3>
 </body>
 </html>
