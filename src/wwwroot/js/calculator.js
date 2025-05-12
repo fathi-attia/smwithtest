@@ -34,7 +34,7 @@ function performCalculation(operation) {
             result = "Invalid Operation";
     }
 
-    document.getElementById("result").textContent = "Result: " + result;
+    document.getElementById("result").textContent =  result;
 }
 
 // ✅ Export functions for Jest testing (Outside `performCalculation()`)
