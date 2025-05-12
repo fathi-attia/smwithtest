@@ -44,11 +44,10 @@ jobs:
           imageToBuild: fathyattia/sm:${{ github.sha }}
           _buildArgumentsKey_: |
             _buildArgumentsValues_
-            - name: Trigger Selenium Tests After Publish
-            uses: peter-evans/repository-dispatch@v2
-            with:
-            token: ${{ secrets.TEST_REPO_TOKEN }}
-            repository: fathi-attia/calc-test
-            event-type: dotnet_deploy_success
 
-
+      - name: Trigger Selenium Tests After Publish
+        uses: peter-evans/repository-dispatch@v2
+        with:
+          token: ${{ secrets.TEST_REPO_TOKEN }}
+          repository: fathi-attia/calc-test
+          event-type: dotnet_deploy_success
