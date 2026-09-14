@@ -8,92 +8,67 @@ on:
   pull_request:
     branches: [ "master" ]
 
-# Define the jobs
 jobs:
+
   # First job: Build the application
   build:
     runs-on: ubuntu-latest
+
     permissions:
       contents: read
+
     steps:
-    - uses: actions/checkout@v3
-    
-    # Setup .NET for building
-    - name: Setup .NET
-      uses: actions/setup-dotnet@v3
-      with:
-        dotnet-version: 6.0.x
-        
-    # Restore dependencies from NuGet
-    - name: Restore dependencies
-      run: dotnet restore
-      working-directory: ./src
-      
-    # Build the application
-    - name: Build
-      run: dotnet build --no-restore
-      working-directory: ./src
+      - name: Checkout source code
+        uses: actions/checkout@v3
+
+      - name: Setup .NET
+        uses: actions/setup-dotnet@v3
+        with:
+          dotnet-version: 6.0.x
+
+      - name: Restore dependencies
+        run: dotnet restore
+        working-directory: ./src
+
+      - name: Build
+        run: dotnet build --no-restore
+        working-directory: ./src
+
 
   # Second job: Run all tests
   test:
-    needs: build  # Only run after successful build
+    needs: build
     runs-on: ubuntu-latest
+
     permissions:
       contents: read
+
     steps:
-    - uses: actions/checkout@v3
-    
-    # Setup .NET for testing
-    - name: Setup .NET
-      uses: actions/setup-dotnet@v3
-      with:
-        dotnet-version: 6.0.x
-        
-    # Run NUnit Tests
-    - name: Run NUnit Tests
-      run: dotnet test --verbosity normal
-      working-directory: ./tests
+      - name: Checkout source code
+        uses: actions/checkout@v3
 
-    # Setup Node.js for Jest testing
-    - name: Setup Node.js
-      uses: actions/setup-node@v3
-      with:
-        node-version: '20'
-        
-    # Install Node.js dependencies
-    - name: Install Node.js dependencies
-      run: npm ci
-      working-directory: ./src/wwwroot/js
+      - name: Setup .NET
+        uses: actions/setup-dotnet@v3
+        with:
+          dotnet-version: 6.0.x
 
-    # Ensure Jest has execution permissions
-    - name: Grant Jest Execution Permissions
-      run: chmod +x node_modules/.bin/jest
-      working-directory: ./src/wwwroot/js
+      - name: Run NUnit Tests
+        run: dotnet test --verbosity normal
+        working-directory: ./tests
 
-    # Run Jest Tests
-    - name: Run Jest Tests
-      run: npx jest
-      working-directory: ./src/wwwroot/js
+      - name: Setup Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: '20'
 
-  # Third job: Build and push Docker image
-  docker:
-    needs: test  # Only run after successful tests
-    runs-on: ubuntu-latest
-    permissions:
-      contents: read
-      packages: write
-    steps:
-    - uses: actions/checkout@v3
-    
-    # Login to Docker Hub using secrets
-    - name: Login to Docker Hub
-      uses: docker/login-action@v2
-      with:
-        username: ${{ secrets.DOCKERHUB_USERNAME }}
-        password: ${{ secrets.DOCKERHUB_TOKEN }}
-        
-    # Build and push the Docker image
-    - name: Build and Push Docker image
-      run: |
-        docker build -t fathyattia/smwithtest:latest1 .
-        docker push fathyattia/smwithtest:latest1
+      - name: Install Node.js dependencies
+        run: npm ci
+        working-directory: ./src/wwwroot/js
+
+      - name: Grant Jest Execution Permissions
+        run: chmod +x node_modules/.bin/jest
+        working-directory: ./src/wwwroot/js
+
+      - name: Run Jest Tests
+        run: npx jest
+        working-directory: ./src/wwwroot/js
