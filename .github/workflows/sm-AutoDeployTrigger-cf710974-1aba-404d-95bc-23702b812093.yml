@@ -1,28 +1,28 @@
 name: Trigger auto deployment for sm
 
-# When this action will be executed
 on:
-  # Automatically trigger it when detected changes in repo
-  push:
-    branches: 
-      [ master ]
-    paths:
-    - '**'
-    - '.github/workflows/sm-AutoDeployTrigger-cf710974-1aba-404d-95bc-23702b812093.yml'
+  workflow_run:
+    workflows: [".NET and Jest Build and Test"]
+    types:
+      - completed
 
-  # Allow manual trigger 
-  workflow_dispatch:      
+  workflow_dispatch:
 
 jobs:
   build-and-deploy:
+    if: ${{ github.event_name == 'workflow_dispatch' || github.event.workflow_run.conclusion == 'success' }}
+
     runs-on: ubuntu-latest
-    permissions: 
-      id-token: write #This is required for requesting the OIDC JWT Token
-      contents: read #Required when GH token is used to authenticate with private repo
+
+    permissions:
+      id-token: write
+      contents: read
 
     steps:
-      - name: Checkout to the branch
-        uses: actions/checkout@v2
+      - name: Checkout tested commit
+        uses: actions/checkout@v4
+        with:
+          ref: ${{ github.event_name == 'workflow_dispatch' && github.ref || github.event.workflow_run.head_sha }}
 
       - name: Azure Login
         uses: azure/login@v1
@@ -41,7 +41,7 @@ jobs:
           registryPassword: ${{ secrets.SM_REGISTRY_PASSWORD }}
           containerAppName: sm
           resourceGroup: fathy-calc_group
-          imageToBuild: fathyattia/sm:${{ github.sha }}
+          imageToBuild: fathyattia/sm:${{ github.event_name == 'workflow_dispatch' && github.sha || github.event.workflow_run.head_sha }}
           _buildArgumentsKey_: |
             _buildArgumentsValues_
 
