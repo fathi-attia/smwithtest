@@ -9,44 +9,128 @@ on:
   workflow_dispatch:
 
 jobs:
-  build-and-deploy:
+
+  # ============================================================
+  # JOB 1 - Build Docker Image and Push to Docker Hub
+  # ============================================================
+  build-and-push:
+    name: Build & Push Docker Image
+
     if: ${{ github.event_name == 'workflow_dispatch' || github.event.workflow_run.conclusion == 'success' }}
 
     runs-on: ubuntu-latest
+
+    permissions:
+      contents: read
+
+    outputs:
+      image-tag: ${{ steps.image.outputs.tag }}
+
+    steps:
+
+      - name: Checkout Tested Commit
+        uses: actions/checkout@v4
+        with:
+          ref: ${{ github.event_name == 'workflow_dispatch' && github.sha || github.event.workflow_run.head_sha }}
+
+      - name: Set Image Tag
+        id: image
+        shell: bash
+        run: |
+          if [ "${{ github.event_name }}" = "workflow_dispatch" ]; then
+            SHA="${{ github.sha }}"
+          else
+            SHA="${{ github.event.workflow_run.head_sha }}"
+          fi
+
+          echo "tag=${SHA}" >> "$GITHUB_OUTPUT"
+          echo "Docker image tag: ${SHA}"
+
+      - name: Login to Docker Hub
+        uses: docker/login-action@v3
+        with:
+          username: ${{ secrets.SM_REGISTRY_USERNAME }}
+          password: ${{ secrets.SM_REGISTRY_PASSWORD }}
+
+      - name: Set up Docker Buildx
+        uses: docker/setup-buildx-action@v3
+
+      - name: Build and Push Docker Image
+        uses: docker/build-push-action@v6
+        with:
+          context: .
+          file: ./Dockerfile
+          push: true
+          tags: |
+            ${{ secrets.SM_REGISTRY_USERNAME }}/sm:${{ steps.image.outputs.tag }}
+
+
+  # ============================================================
+  # JOB 2 - Deploy Docker Image to Azure Container Apps
+  # ============================================================
+  deploy-azure:
+    name: Deploy to Azure
+
+    runs-on: ubuntu-latest
+
+    needs: build-and-push
 
     permissions:
       id-token: write
       contents: read
 
     steps:
-      - name: Checkout tested commit
-        uses: actions/checkout@v4
-        with:
-          ref: ${{ github.event_name == 'workflow_dispatch' && github.ref || github.event.workflow_run.head_sha }}
 
       - name: Azure Login
-        uses: azure/login@v1
+        uses: azure/login@v2
         with:
           client-id: ${{ secrets.SM_AZURE_CLIENT_ID }}
           tenant-id: ${{ secrets.SM_AZURE_TENANT_ID }}
           subscription-id: ${{ secrets.SM_AZURE_SUBSCRIPTION_ID }}
 
-      - name: Build and push container image to registry
-        uses: azure/container-apps-deploy-action@v2
-        with:
-          appSourcePath: ${{ github.workspace }}
-          _dockerfilePathKey_: _dockerfilePath_
-          registryUrl: docker.io
-          registryUsername: ${{ secrets.SM_REGISTRY_USERNAME }}
-          registryPassword: ${{ secrets.SM_REGISTRY_PASSWORD }}
-          containerAppName: sm
-          resourceGroup: fathy-calc_group
-          imageToBuild: fathyattia/sm:${{ github.event_name == 'workflow_dispatch' && github.sha || github.event.workflow_run.head_sha }}
-          _buildArgumentsKey_: |
-            _buildArgumentsValues_
+      - name: Configure Azure Container Apps CLI
+        run: |
+          az config set extension.use_dynamic_install=yes_without_prompt
 
-      - name: Trigger Selenium Tests After Publish
-        uses: peter-evans/repository-dispatch@v2
+      - name: Configure Docker Hub Registry
+        run: |
+          az containerapp registry set \
+            --name sm \
+            --resource-group fathy-calc_group \
+            --server docker.io \
+            --username "${{ secrets.SM_REGISTRY_USERNAME }}" \
+            --password "${{ secrets.SM_REGISTRY_PASSWORD }}"
+
+      - name: Deploy Image to Azure Container App
+        run: |
+          az containerapp update \
+            --name sm \
+            --resource-group fathy-calc_group \
+            --image docker.io/${{ secrets.SM_REGISTRY_USERNAME }}/sm:${{ needs.build-and-push.outputs.image-tag }}
+
+      - name: Show Deployment Information
+        run: |
+          az containerapp show \
+            --name sm \
+            --resource-group fathy-calc_group \
+            --query "{name:name,image:properties.template.containers[0].image,revision:properties.latestRevisionName}" \
+            --output table
+
+
+  # ============================================================
+  # JOB 3 - Trigger Selenium Repository
+  # ============================================================
+  trigger-selenium:
+    name: Trigger Selenium Tests
+
+    runs-on: ubuntu-latest
+
+    needs: deploy-azure
+
+    steps:
+
+      - name: Trigger Selenium Tests After Deployment
+        uses: peter-evans/repository-dispatch@v3
         with:
           token: ${{ secrets.TEST_REPO_TOKEN }}
           repository: fathi-attia/calc-test

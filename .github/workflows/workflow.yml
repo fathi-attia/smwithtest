@@ -5,13 +5,17 @@ name: .NET and Jest Build and Test
 on:
   push:
     branches: [ "master" ]
+
   pull_request:
     branches: [ "master" ]
 
 jobs:
 
-  # First job: Build the application
+  # ==========================================================
+  # Job 1: Build the .NET application
+  # ==========================================================
   build:
+    name: Build .NET
     runs-on: ubuntu-latest
 
     permissions:
@@ -19,10 +23,10 @@ jobs:
 
     steps:
       - name: Checkout source code
-        uses: actions/checkout@v3
+        uses: actions/checkout@v4
 
       - name: Setup .NET
-        uses: actions/setup-dotnet@v3
+        uses: actions/setup-dotnet@v4
         with:
           dotnet-version: 6.0.x
 
@@ -30,13 +34,16 @@ jobs:
         run: dotnet restore
         working-directory: ./src
 
-      - name: Build
+      - name: Build application
         run: dotnet build --no-restore
         working-directory: ./src
 
 
-  # Second job: Run all tests
-  test:
+  # ==========================================================
+  # Job 2: Run NUnit tests
+  # ==========================================================
+  nunit-tests:
+    name: NUnit Tests
     needs: build
     runs-on: ubuntu-latest
 
@@ -45,10 +52,10 @@ jobs:
 
     steps:
       - name: Checkout source code
-        uses: actions/checkout@v3
+        uses: actions/checkout@v4
 
       - name: Setup .NET
-        uses: actions/setup-dotnet@v3
+        uses: actions/setup-dotnet@v4
         with:
           dotnet-version: 6.0.x
 
@@ -56,8 +63,24 @@ jobs:
         run: dotnet test --verbosity normal
         working-directory: ./tests
 
+
+  # ==========================================================
+  # Job 3: Run Jest tests
+  # ==========================================================
+  jest-tests:
+    name: Jest Tests
+    needs: nunit-tests
+    runs-on: ubuntu-latest
+
+    permissions:
+      contents: read
+
+    steps:
+      - name: Checkout source code
+        uses: actions/checkout@v4
+
       - name: Setup Node.js
-        uses: actions/setup-node@v3
+        uses: actions/setup-node@v4
         with:
           node-version: '20'
 
